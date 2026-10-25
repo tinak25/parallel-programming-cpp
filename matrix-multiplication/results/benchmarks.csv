@@ -1,0 +1,29 @@
+# Linux x86_64, 2 logical cores, median of 3 runs
+experiment,label,n,ranks,threads,seconds
+order,sequential ijk,256,1,1,0.019633
+order,sequential ikj,256,1,1,0.009884
+order,sequential ijk,512,1,1,0.151864
+order,sequential ikj,512,1,1,0.075048
+order,sequential ijk,1000,1,1,0.749242
+order,sequential ikj,1000,1,1,0.555597
+order,sequential ijk,1024,1,1,4.779
+order,sequential ikj,1024,1,1,0.567208
+order,sequential ijk,1500,1,1,2.93869
+order,sequential ikj,1500,1,1,1.81984
+order,sequential ijk,1536,1,1,14.9274
+order,sequential ikj,1536,1,1,1.96663
+order,sequential ijk -O0,1000,1,1,2.89543
+all,pthreads ijk,1000,1,1,0.735845
+all,openmp ijk,1000,1,1,0.764743
+all,pthreads ijk,1000,1,2,0.40477
+all,openmp ijk,1000,1,2,0.410845
+all,pthreads ikj,1000,1,1,0.594448
+all,openmp ikj,1000,1,1,0.512384
+all,pthreads ikj,1000,1,2,0.28581
+all,openmp ikj,1000,1,2,0.254018
+all,mpi ikj,1000,1,1,0.599791
+all,mpi ikj,1000,2,1,0.317147
+all,mpi+openmp ikj,1000,1,2,0.288607
+all,mpi+openmp ikj,1000,2,1,0.273315
+all,opencl,1000,1,1,0.334956
+all,mpi+opencl,1000,2,1,0.384152

@@ -1,0 +1,33 @@
+# Linux x86_64, 2 logical cores, median of 3 runs (odd-even: 1 run)
+experiment,label,n,range,seconds
+duplicates,sequential lomuto,250000,1000,0.038456
+duplicates,sequential 3way,250000,1000,0.012964
+duplicates,sequential std,250000,1000,0.012616
+duplicates,sequential lomuto,500000,1000,0.120633
+duplicates,sequential 3way,500000,1000,0.024148
+duplicates,sequential std,500000,1000,0.024342
+duplicates,sequential lomuto,1000000,1000,0.44127
+duplicates,sequential 3way,1000000,1000,0.050183
+duplicates,sequential std,1000000,1000,0.04784
+duplicates,sequential lomuto,2000000,1000,1.74905
+duplicates,sequential 3way,2000000,1000,0.096307
+duplicates,sequential std,2000000,1000,0.094109
+duplicates,sequential lomuto,4000000,1000,6.53835
+duplicates,sequential 3way,4000000,1000,0.193655
+duplicates,sequential std,4000000,1000,0.194461
+distinct,sequential lomuto,4000000,2000000000,0.399813
+distinct,sequential 3way,4000000,2000000000,0.468093
+distinct,sequential std,4000000,2000000000,0.363213
+parallel,sequential 3way,10000000,2000000000,1.24016
+parallel,threads t=2,10000000,2000000000,0.716581
+parallel,threads t=4,10000000,2000000000,0.659021
+parallel,mpi ranks=1,10000000,2000000000,1.62912
+parallel,mpi ranks=2,10000000,2000000000,0.926124
+opencl,opencl odd-even,10000,1000,0.195023
+opencl,opencl odd-even,50000,1000,1.5999
+opencl,opencl bitonic,10000,1000,0.003417
+opencl,cpu 3way,10000,1000,0.000615
+opencl,opencl bitonic,50000,1000,0.008886
+opencl,cpu 3way,50000,1000,0.00255
+opencl,opencl bitonic,1000000,1000,0.133671
+opencl,cpu 3way,1000000,1000,0.053044

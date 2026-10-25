@@ -1,0 +1,15 @@
+# Linux x86_64, 2 logical cores, median of 5 runs
+experiment,label,producers,consumers,ranks,seconds,largest_message_bytes
+cpu,sequential,0,0,1,0.119715,
+cpu,threads p=1 c=1 batch=1,1,1,1,0.923285,
+cpu,threads p=1 c=2 batch=1,1,2,1,0.368925,
+cpu,threads p=1 c=1 batch=1000,1,1,1,0.138198,
+cpu,threads p=1 c=2 batch=1000,1,2,1,0.080134,
+cpu,mpi ranks=1,0,0,1,0.200286,1005412
+cpu,mpi ranks=2,0,0,2,0.127728,502716
+sensors,sequential,0,0,1,2.58672,
+sensors,threads p=1 c=1,1,1,1,2.60004,
+sensors,threads p=2 c=1,2,1,1,1.29969,
+sensors,threads p=4 c=1,4,1,1,0.647541,
+sensors,threads p=8 c=1,8,1,1,0.323975,
+sensors,threads p=8 c=2,8,2,1,0.322361,
