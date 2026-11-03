@@ -8,7 +8,7 @@ Three problems, each solved from a single-threaded baseline up to distributed an
 | [**parallel-sorting**](parallel-sorting) | quicksort with `std::thread` | MPI, MPI + OpenCL | Repeated values made my original quicksort quadratic (6.5 s vs 0.19 s); odd-even sort on OpenCL was 180x slower than bitonic sort |
 | [**traffic-simulator**](traffic-simulator) | producer-consumer with a bounded queue | MPI master-worker | 8x from overlapping sensor waits, but 7.7x *slower* when every line went through the queue, until batching fixed it |
 
-These started as assignments for a university course on concurrent and distributed programming. I rebuilt them after reviewing my original code, which had several real bugs:
+These started as assignments for a university course on concurrent and distributed programming. Reviewing my original code, I found and fixed several real bugs:
 - a quicksort that went quadratic on repeated values
 - MPI scatters that silently dropped values
 - a fixed 4 KB message buffer that crashed on realistic data
