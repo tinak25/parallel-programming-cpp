@@ -18,6 +18,20 @@ These started as assignments for a university course on concurrent and distribut
 
 Each project's README lists what was wrong and how I fixed it. My final project for the same course, a hybrid MPI and threads airport simulator, has [its own repository](https://github.com/tinak25/airport-flight-simulator).
 
+## Highlights
+
+**Matrix multiplication:** Swapping two loops made one thread up to 8.4x faster, and the biggest gains came from cache conflicts at sizes like N = 1024.
+
+![Loop order speed-up by matrix size](matrix-multiplication/charts/loop_order.png)
+
+**Parallel sorting:** Repeated values made the original quicksort quadratic. A 3-way partition cut 4 million values from 6.54 s to 0.19 s.
+
+![Original vs fixed quicksort](parallel-sorting/charts/duplicates.png)
+
+**Traffic simulator:** Sending every reading through the queue made the threaded version 7.7x slower than sequential. Batching 1,000 readings at a time turned that into a 1.49x speed-up.
+
+![Queue batching results](traffic-simulator/charts/cpu_bound.png)
+
 ## Skills shown
 
 - **Shared memory:** POSIX threads, `std::thread`, OpenMP, mutexes, condition variables, a bounded blocking queue, lock scope, load balancing
